@@ -1,0 +1,19 @@
+{
+  "name": "imap-checker",
+  "version": "0.0.2",
+  "description": "Check the email server and return the matching emails",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hex0cter/imap-checker.git"
+  },
+  "homepage": "https://danielhan.dev",
+  "author": "Daniel Han",
+  "license": "MIT",
+  "dependencies": {
+    "mail-notifier": "^0.5.0"
+  }
+}
