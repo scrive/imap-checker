@@ -1,7 +1,7 @@
-var mailChecker = require('./index')
+var imapChecker = require('./index')
 const imapConfig = require('./credentials.json')
 
-mailChecker.checkMail(imapConfig, {
+imapChecker.checkMail(imapConfig, {
   timeout: 300,
   subject: 'test123',
   to: 'systest.qa+test123@gmail.com',

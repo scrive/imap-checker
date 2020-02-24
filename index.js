@@ -1,7 +1,7 @@
 
 const mailNotifier = require('mail-notifier');
 
-const mailChecker = (imapConfig, { timeout, from, to, subject }) => {
+const imapChecker = (imapConfig, { timeout, from, to, subject }) => {
   return new Promise((resolve, reject) => {
     const notifier = mailNotifier(imapConfig);
 
@@ -35,9 +35,9 @@ const mailChecker = (imapConfig, { timeout, from, to, subject }) => {
         notifier.stop();
       }, 2000)
     })
-    .on('error', err => console.log('>>>> error', error))
+    .on('error', err => console.log('An error has occured:', err))
     .start();
   })
 }
 
-exports.checkMail = mailChecker;
+exports.checkMail = imapChecker;
