@@ -6,7 +6,7 @@ Check the IMAP server and return the matching emails.
 ## How to use
 
 ```javascript
-var imapChecker = require('imap-checker')
+var imapChecker = require('imap-checker');
 
 const imapConfig = {
   user: "user@gmail.com",
@@ -23,12 +23,12 @@ imapChecker.checkMail(imapConfig, {
   to: 'john@gmail.com',
   from: 'bob@gmail.com',
 })
-.then(email => console.log('>>>', email))
+.then(email => console.log('>>>', email));
 ```
 
 Or in ES6:
 ```javascript
-import imapChecker from 'imap-checker'
+import imapChecker from 'imap-checker';
 
 const imapConfig = {
   user: "user@gmail.com",
@@ -44,7 +44,7 @@ const email = await imapChecker.checkMail(imapConfig, {
   subject: '<subject>',
   to: 'john@gmail.com',
   from: 'bob@gmail.com',
-})
+});
 
-console.log('>>>', email))
+console.log('>>>', email));
 ```
