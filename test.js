@@ -1,11 +1,11 @@
-var imapChecker = require('./index')
-const imapConfig = require('./credentials.json')
+const imapChecker = require('./index');
+const imapConfig = require('./credentials.json');
 
 imapChecker.checkMail(imapConfig, {
-  timeout: 300,
+  timeout: 30000,
   subject: 'test123',
   to: 'systest.qa+test123@gmail.com',
   from: 'daniel.han@scrive.com',
 })
-.then(email => console.log('>>>', email))
-.catch(err => console.error('++++', err))
+  .then(email => console.log('>>>', email))
+  .catch(err => console.error('++++', err));

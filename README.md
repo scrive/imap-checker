@@ -18,7 +18,7 @@ const imapConfig = {
 };
 
 imapChecker.checkMail(imapConfig, {
-  timeout: 300,
+  timeout: 30000,
   subject: '<subject>',
   to: 'john@gmail.com',
   from: 'bob@gmail.com',
