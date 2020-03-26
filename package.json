@@ -8,9 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hex0cter/imap-checker.git"
+    "url": "https://github.com/scrive/imap-checker.git"
   },
-  "homepage": "https://danielhan.dev",
   "author": "Daniel Han",
   "license": "MIT",
   "dependencies": {
