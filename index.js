@@ -1,7 +1,7 @@
 const mailNotifier = require('mail-notifier');
 
 const imapChecker = (imapConfig, {timeout, from, to, subject}) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const notifier = mailNotifier(imapConfig);
     let timeoutFunc;
 
@@ -32,6 +32,7 @@ const imapChecker = (imapConfig, {timeout, from, to, subject}) => {
       })
       .on('error', (err) => {
         console.log(`Error when checking for email: ${err.message} \n\n ${err.stack}`);
+        reject(err);
       })
       .start();
   });
