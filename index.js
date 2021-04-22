@@ -1,6 +1,6 @@
-import imaps from 'imap-simple';
-import { simpleParser } from 'mailparser';
-import _ from 'lodash';
+const imaps = require('imap-simple');
+const simpleParser = require('mailparser').simpleParser;
+const _ = require('lodash');
 
 const sleep = ms => new Promise((resolve) => setTimeout(resolve, ms));
 
