@@ -35,15 +35,15 @@ const imapChecker = async (imapConfig, {timeout, from, to, subject}) => {
         const mail = await parse(idHeader + all.body);
 
         let matched = true;
-        if (from && from != mail.from.text) {
+        if (from && from !== mail.from.text) {
           matched = false;
         }
 
-        if (to && to != mail.to.text) {
+        if (to && to !== mail.to.text) {
           matched = false;
         }
 
-        if (subject && subject != mail.subject) {
+        if (subject && subject !== mail.subject) {
           matched = false;
         }
 
