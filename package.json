@@ -1,6 +1,6 @@
 {
   "name": "imap-checker",
-  "version": "0.0.6-3",
+  "version": "0.0.6",
   "description": "Check the email server and return the matching emails",
   "main": "index.js",
   "scripts": {
