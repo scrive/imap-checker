@@ -16,7 +16,11 @@ const parse = (source, options) => new Promise((resolve, reject) => {
 });
 
 const imapChecker = async (imapConfig, {
-  timeout = 300000, from, to, subject, interval = 3000,
+  timeout = 300000,
+  from,
+  to,
+  subject,
+  interval = 2000,
 } = {}) => {
   const config = {
     imap: imapConfig,
