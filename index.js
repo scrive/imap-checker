@@ -1,5 +1,6 @@
 const imaps = require('imap-simple');
 const simpleParser = require('mailparser').simpleParser;
+const addrs = require("email-addresses")
 const _ = require('lodash');
 
 const sleep = ms => new Promise((resolve) => setTimeout(resolve, ms));
@@ -10,7 +11,7 @@ const parse = (source, options) => {
   });
 }
 
-const imapChecker = async (imapConfig, {timeout, from, to, subject}) => {
+const imapChecker = async (imapConfig, {timeout=300000, from, to, subject, interval=3000} = {}) => {
     const config = {
       imap: imapConfig
     };
@@ -35,11 +36,13 @@ const imapChecker = async (imapConfig, {timeout, from, to, subject}) => {
         const mail = await parse(idHeader + all.body);
 
         let matched = true;
-        if (from && from !== mail.from.text) {
+        const sender_address = addrs.parseOneAddress(mail.from.text).parts.address.semantic;
+        if (from && from !== sender_address) {
           matched = false;
         }
 
-        if (to && to !== mail.to.text) {
+        const receiver_address = addrs.parseOneAddress(mail.to.text).parts.address.semantic;
+        if (to && to !== receiver_address) {
           matched = false;
         }
 
@@ -54,10 +57,10 @@ const imapChecker = async (imapConfig, {timeout, from, to, subject}) => {
 
       const now = Date.now();
       if (now - startTime > timeout) {
-        throw new Error(`TimeoutError: couln't find emails in ${timeout}ms.`);
+        throw new Error(`TimeoutError: couln't find emails in ${timeout} ms.`);
       }
 
-      await sleep(1000);
+      await sleep(interval);
     }
 };
 
