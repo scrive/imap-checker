@@ -16,10 +16,10 @@ const parse = (source, options) => new Promise((resolve, reject) => {
 });
 
 const imapChecker = async (imapConfig, {
-  timeout = 300000,
   from,
   to,
   subject,
+  timeout = 300000,
   interval = 2000,
 } = {}) => {
   const config = {
