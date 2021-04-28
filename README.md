@@ -51,4 +51,4 @@ const email = await imapChecker.checkMail(imapConfig, {
 console.log('>>>', email);
 ```
 
-Different formats of email addresses are supported. For example, if you look for emails with sender's address as `Joe Doe <joe@example.com>`, just search it with `to: joe@example.com`.
+Different formats of email addresses are supported. For example, if you are looking for emails with sender's address as `Joe Doe <joe@example.com>`, just search it as `joe@example.com`.
