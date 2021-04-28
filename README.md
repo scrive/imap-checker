@@ -22,6 +22,7 @@ imapChecker.checkMail(imapConfig, {
   subject: '<subject>',
   to: 'john@gmail.com',
   from: 'bob@gmail.com',
+  interval: 2000
 })
 .then(email => console.log('>>>', email));
 ```
@@ -40,11 +41,14 @@ const imapConfig = {
 };
 
 const email = await imapChecker.checkMail(imapConfig, {
-  timeout: 300,
+  timeout: 30000,
   subject: '<subject>',
   to: 'john@gmail.com',
   from: 'bob@gmail.com',
+  interval: 2000
 });
 
 console.log('>>>', email);
 ```
+
+Different formats of email addresses are supported. For example, if you are looking for emails with sender's address as `Joe Doe <joe@example.com>`, just search it as `joe@example.com`.

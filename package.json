@@ -4,6 +4,7 @@
   "description": "Check the email server and return the matching emails",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "node test.js"
   },
   "repository": {
@@ -13,8 +14,13 @@
   "author": "Daniel Han",
   "license": "MIT",
   "dependencies": {
+    "email-addresses": "^4.0.0",
     "imap-simple": "^5.0.0",
     "lodash": "^4.17.21",
     "mailparser": "^3.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-config-google": "^0.14.0"
   }
 }
