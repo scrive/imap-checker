@@ -46,7 +46,7 @@ const email = await imapChecker.checkMail(imapConfig, {
   to: 'john@gmail.com',
   from: 'bob@gmail.com',
   interval: 2000,
-  logging: true
+  debug: true
 });
 
 console.log('>>>', email);
