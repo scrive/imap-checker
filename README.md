@@ -1,7 +1,7 @@
 # mail checker
 [![npm version](https://badge.fury.io/js/imap-checker.svg)](https://badge.fury.io/js/imap-checker)
 
-Check the IMAP server and return the matching emails.
+Check the IMAP server and return the first matching email.
 
 ## How to use
 
@@ -45,7 +45,9 @@ const email = await imapChecker.checkMail(imapConfig, {
   subject: '<subject>',
   to: 'john@gmail.com',
   from: 'bob@gmail.com',
-  interval: 2000
+  interval: 2000,
+  since: 24 * 3600 * 1000,
+  debug: true
 });
 
 console.log('>>>', email);
